@@ -8,23 +8,29 @@
 </head>
 <body>
     <script>
-        function getComputerChoice()
+        function getPlayersChoice()//gets player input
+        {
+           let playermove=prompt("Select you move");
+           playermove=playermove.toLowerCase();
+           return playermove;
+        }
+        function getComputerChoice()//gets computer input
         {
             let randomNumber= ((Math.floor(Math.random()*100))%3);
             if(randomNumber===0)
             {
-                return "ROCK";
+                return "rock";
             }
             else if(randomNumber===1)
             {
-                return "PAPER";
+                return "paper";
             }
             else
             {
-                return "SCISSORS";
+                return "scissors";
             }
         }
         
-    </script>
+</script>
 </body>
 </html>
