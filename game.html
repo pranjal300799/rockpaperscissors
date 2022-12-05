@@ -59,6 +59,29 @@
                 return 5;
             }
         }
+        function result(output)//gives result based on output from engine
+        {   let fact1="Paper beats rock"
+            ,fact2="Scissors beats paper"
+            ,fact3="Rock beats Scissors"
+            ,message1="You won"
+            ,message2="You Lose";
+
+            switch(output)
+            {   
+                case 0: return `${message2},${fact1}`
+                break;
+                case 1:return  `${message1},${fact1}`
+                break;
+                case 2:return `${message2},${fact2}`
+                break;
+                case 3:return `${message1},${fact2}`
+                break;
+                case 4:return `${message1},${fact3}`
+                break;
+                case 5:return `${message2},${fact3}`
+                break;
+            }
+        }
 </script>
 </body>
 </html>
