@@ -30,7 +30,35 @@
                 return "scissors";
             }
         }
-        
+        function gameEngine(playerChoice,computerChoice)//logic for the game
+        {    let move1="rock"   
+             ,move2="paper"
+             ,move3="scissors";          
+            if(playerChoice===move1&&computerChoice===move2)
+            {
+               return 0;
+            }
+            else if(playerChoice===move2 && computerChoice===move1)
+            {
+                return 1;
+            }
+            else if(playerChoice===move2&&computerChoice===move3)
+            {
+                return 2;
+            }
+            else if(playerChoice===move3&&computerChoice===move2)
+            {
+                return 3;
+            }
+            else if(playerChoice===move1&&computerChoice===move3)
+            {
+                return 4;
+            }
+            else if(playerChoice===move3&&computerChoice===move1)
+            {
+                return 5;
+            }
+        }
 </script>
 </body>
 </html>
