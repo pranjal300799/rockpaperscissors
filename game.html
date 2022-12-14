@@ -66,9 +66,13 @@
             {
                 return 7;
             }
-            else
+            else if (playerChoice===move3&&computerChoice===move3)
             {
                 return 8;
+            }
+            else
+            {
+                return 9;
             }
         }
         function result(output)//gives result based on output from engine
@@ -76,7 +80,8 @@
             ,fact2="Scissors beats paper"
             ,fact3="Rock beats Scissors"
             ,message1="You won"
-            ,message2="You Lose";
+            ,message2="You Lose"
+            ,message3="Its a tie";
 
             switch(output)
             {   
@@ -92,6 +97,11 @@
                 break;
                 case 5:return `${message2},${fact3}`
                 break;
+                case 6:
+                case 7:
+                case 8:return`${message3}`
+                break;
+                default:return "you entered wrong input check spelling";
             }
         }
         function game()//plays a single round of game and returns the otput
