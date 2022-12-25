@@ -1,0 +1,43 @@
+body
+{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  background-color: beige;
+}
+.header
+{
+  flex:1;/*o grow in vertical direction*/
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 50px;
+  background-color:orange;
+}
+.header>p
+{ 
+  text-align: center;
+  width:80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
