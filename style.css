@@ -13,18 +13,55 @@ body
   align-items:center;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 50px;
-  background-color:orange;
+  background-color:rgb(243, 242, 218);
 }
 .header>p
 { 
   text-align: center;
   width:80%;
 }
+.participant-panels
+{ margin-top: 20px;/*to be removed*/
+  flex:1;
+  display:flex;
+  flex-wrap:wrap;
+  padding:40px;
+  border:solid black;
+  background-color: rgb(78, 141, 124);
+}
+.human,.computer
+{ display:flex;
+  flex-direction:column;
+  flex:1 1 auto;
+  min-width:300px;
+  gap:20px;
+  justify-content:space-around;
 
-
-
-
-
+}                             /*order of these two relative to each other decides the prcecdence*/
+.arena
+{
+  display:flex;
+  flex-direction:column;
+  flex:1 1 auto;
+  min-width:300px;
+  gap:20px; 
+}
+.moves
+{
+  display:flex;
+  min-height:200px;
+  justify-content:space-around;
+}
+h2
+{
+  align-self:center;
+}
+img
+{
+  border-radius: 20px;
+  width:100px;
+  height: auto;
+}
 
 
 
