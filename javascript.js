@@ -1,4 +1,5 @@
-let callCounter=0;
+let callCounter=0,
+playerScore=0,computerScore=0;
 function getPlayersChoice(move)//gets player input
 {  let playermove=move.target.parentElement.classList.value;
     move.stopPropagation();
@@ -76,18 +77,24 @@ function result(output)//gives result based on output from engine
 
     switch(output)
     {   
-        case 0: return `${message2},${fact1}`
-        break;
-        case 1:return  `${message1},${fact1}`
-        break;
-        case 2:return `${message2},${fact2}`
-        break;
-        case 3:return `${message1},${fact2}`
-        break;
-        case 4:return `${message1},${fact3}`
-        break;
-        case 5:return `${message2},${fact3}`
-        break;
+        case 0: computerScore++;
+                return `${message2},${fact1}`
+                break;
+        case 1:playerScore++;
+               return  `${message1},${fact1}`
+               break;
+        case 2:computerScore++;
+               return `${message2},${fact2}`
+               break;
+        case 3:playerScore++;
+               return `${message1},${fact2}`
+               break;
+        case 4:playerScore++;
+               return `${message1},${fact3}`
+               break;
+        case 5:computerScore++;
+               return `${message2},${fact3}`
+               break;
         case 6:
         case 7:
         case 8:return`${message3}`
@@ -119,7 +126,10 @@ function cleanArena()
     let arenaNodesList=document.querySelectorAll(".arena>p");
     arenaNodesList.forEach((e)=>{parent.removeChild(e)});
 }
+function updateScore()
+{
 
+}
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
 
