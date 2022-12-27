@@ -113,8 +113,9 @@ function printCurrentRoundResult(e,callCounter)
       let arena=document.querySelector(".arena");
       let para=document.createElement('p');
       para.classList.add("currentresult");
-      para.textContent=e;
+      para.textContent=`Round ${callCounter},${e}`;
       arena.appendChild(para);
+      updateScore();
     }
     else
     {
@@ -128,7 +129,10 @@ function cleanArena()
 }
 function updateScore()
 {
-
+    let playerBoard=document.querySelector(".playersscore");
+    let computerBoard=document.querySelector(".computerscore");
+    playerBoard.textContent=`${playerScore}`;
+    computerBoard.textContent=`${computerScore}`;
 }
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
