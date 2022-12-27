@@ -126,13 +126,21 @@ function cleanArena()
 {   let parent=document.querySelector(".arena")
     let arenaNodesList=document.querySelectorAll(".arena>p");
     arenaNodesList.forEach((e)=>{parent.removeChild(e)});
+    updateScore("reset");
 }
-function updateScore()
-{
-    let playerBoard=document.querySelector(".playersscore");
+function updateScore(flag)
+{   let playerBoard=document.querySelector(".playersscore");
     let computerBoard=document.querySelector(".computerscore");
+  if(flag!=="reset")
+  { 
     playerBoard.textContent=`${playerScore}`;
     computerBoard.textContent=`${computerScore}`;
+  }
+  else
+  {
+     playerBoard.textContent="-";
+     computerBoard.textContent="-";
+  }
 }
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
