@@ -1,3 +1,4 @@
+let callCounter=0;
 function getPlayersChoice(move)//gets player input
 {  let playermove=move.target.parentElement.classList.value;
     move.stopPropagation();
@@ -95,17 +96,26 @@ function result(output)//gives result based on output from engine
     }
 }
 function game(e)//plays a single round of game and returns the otput
-{
+{    callCounter+=1;
      let currentRoundResult=(result(gameEngine(getPlayersChoice(e),getComputerChoice())));// dec 27 added the event parameter e in the game()    
+     printCurrentRoundResult(currentRoundResult,callCounter);
 }
-function printCurrentRoundResult(e)
-{
-    let arena=document.querySelector(".arena");
-    let para=document.createElement('p');
-    para.classList.add("currentresult");
-    para.textContent=e;
-    arena.appendChild(para);
+function printCurrentRoundResult(e,callCounter)
+{   if(callCounter<=5)
+    {
+      let arena=document.querySelector(".arena");
+      let para=document.createElement('p');
+      para.classList.add("currentresult");
+      para.textContent=e;
+      arena.appendChild(para);
+    }
+    else
+    {
+        
+    }
 }
+
+
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
 
