@@ -96,8 +96,28 @@ function result(output)//gives result based on output from engine
 }
 function game(e)//plays a single round of game and returns the otput
 {
-     console.log(result(gameEngine(getPlayersChoice(e),getComputerChoice())));// dec 27 added the event parameter e in the game() 
+     let currentRoundResult=(result(gameEngine(getPlayersChoice(e),getComputerChoice())));// dec 27 added the event parameter e in the game()    
 }
+function printCurrentRoundResult(e)
+{
+    let arena=document.querySelector(".arena");
+    let para=document.createElement('p');
+    para.classList.add("currentresult");
+    para.textContent=e;
+    arena.appendChild(para);
+}
+let movesList = document.querySelectorAll(".human>.moves>div");
+movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
+
+
+
+
+
+
+
+
+
+
 // function playRounds()//plays a set of five rounds and prints the output
 // {
 //     for(let i=0;i<5;i++)
@@ -105,12 +125,9 @@ function game(e)//plays a single round of game and returns the otput
 //         console.log(game());
 //     }
 // }
-// playRounds();
-
-// function demo(e)
+// function countIndividualWins(result)
 // {
-//     console.log(e.target.parentElement.classList.value);
-//     e.stopPropagation();
+//     let computerWins=0,
+//     playersWins=0;
+
 // }
-let movesList = document.querySelectorAll(".human>.moves>div");
-movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
