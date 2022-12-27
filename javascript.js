@@ -111,10 +111,14 @@ function printCurrentRoundResult(e,callCounter)
     }
     else
     {
-        
+        cleanArena();
     }
 }
-
+function cleanArena()
+{   let parent=document.querySelector(".arena")
+    let arenaNodesList=document.querySelectorAll(".arena>p");
+    arenaNodesList.forEach((e)=>{parent.removeChild(e)});
+}
 
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
