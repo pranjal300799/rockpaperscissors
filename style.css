@@ -63,12 +63,18 @@ h2
 {
   align-self:center;
 }
-img
+.human img
 {
   border-radius: 20px;
   width:100px;
   height: auto;
-}
+ }
+ img
+{
+  border-radius: 20px;
+  width:100px;
+  height: auto;
+ }
 .scoreboard
 { padding-bottom:40px;
   flex:1;
@@ -113,9 +119,17 @@ img
   font-size:15px;
   margin:10px;
 }
+ /* .clicked
+{
 
-
-
+} */
+.human img:hover
+{
+  border-radius: 20px;
+  width:100px;
+  height: auto;
+  transform:scale(1.1);
+ } 
 
 
 
