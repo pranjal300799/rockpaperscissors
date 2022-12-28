@@ -137,10 +137,29 @@ function updateScore(flag)
     computerBoard.textContent=`${computerScore}`;
   }
   else
-  {
+  {  finalResult();
      playerBoard.textContent="-";
      computerBoard.textContent="-";
   }
+}
+function finalResult()
+{   let result;
+    let arena=document.querySelector(".arena")
+    let resultantString=document.createElement('p');
+    if(playerScore===computerScore)
+    {
+       result=`its a tie`;
+    }
+    else if(playerScore>=computerScore)
+    {
+      result="You won,saviour of humans";
+    }
+    else
+    {
+       result="You lost to the evil computer";
+    }
+    resultantString.textContent=result;
+    arena.appendChild(resultantString);
 }
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
