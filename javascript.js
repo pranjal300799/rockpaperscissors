@@ -7,20 +7,21 @@ function getPlayersChoice(move)//gets player input
    return playermove;
 }
 function getComputerChoice()//gets computer input
-{
+{   let string;
     let randomNumber= ((Math.floor(Math.random()*100))%3);
     if(randomNumber===0)
     {
-        return "rock";
+        string="rock";
     }
     else if(randomNumber===1)
     {
-        return "paper";
+        string= "paper";
     }
     else
     {
-        return "scissors";
+        string="scissors";
     }
+    return string;
 }
 function gameEngine(playerChoice,computerChoice)//logic for the game
 {    let move1="rock"   
@@ -151,7 +152,7 @@ function finalResult()
        result=`its a tie`;
     }
     else if(playerScore>=computerScore)
-    {
+    {"You won,saviour of humans"
       result="You won,saviour of humans";
     }
     else
@@ -161,6 +162,7 @@ function finalResult()
     resultantString.textContent=result;
     arena.appendChild(resultantString);
 }
+
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
 
@@ -170,19 +172,3 @@ movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// 
 
 
 
-
-
-
-// function playRounds()//plays a set of five rounds and prints the output
-// {
-//     for(let i=0;i<5;i++)
-//     {
-//         console.log(game());
-//     }
-// }
-// function countIndividualWins(result)
-// {
-//     let computerWins=0,
-//     playersWins=0;
-
-// }
