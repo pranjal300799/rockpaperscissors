@@ -21,6 +21,7 @@ function getComputerChoice()//gets computer input
     {
         string="scissors";
     }
+    transform(string);
     return string;
 }
 function gameEngine(playerChoice,computerChoice)//logic for the game
@@ -162,7 +163,11 @@ function finalResult()
     resultantString.textContent=result;
     arena.appendChild(resultantString);
 }
-
+function transform(string)
+{
+    let targetImage=document.querySelector(`.computer>.moves>.${string}>img`);
+    targetImage.classList.add("magnification");
+}
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
 
