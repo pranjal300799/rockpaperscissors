@@ -171,6 +171,9 @@ function transform(string)
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
 
+let transitedNodesList=document.querySelectorAll(".computer>.moves img");//dec 29
+transitedNodesList.forEach(node=>node.addEventListener('transitionend',finishTransit)); //dec29
+
 
 
 
