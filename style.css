@@ -45,7 +45,7 @@ body
   display:flex;
   flex-direction:column;
   flex:1 1 auto;
-  min-width:300px;
+  min-width:600px;
   gap:20px; 
   background-image:linear-gradient(to bottom right,rgb(247, 0, 255),rgb(177, 81, 17)) ;
   border-radius:40px;
@@ -68,12 +68,14 @@ h2
   border-radius: 20px;
   width:100px;
   height: auto;
+  transition:all 0.4s ease;
  }
  img
 {
   border-radius: 20px;
   width:100px;
   height: auto;
+  transition:all  0.4s ease;
  }
 .scoreboard
 { padding-bottom:40px;
@@ -128,9 +130,12 @@ h2
   border-radius: 20px;
   width:100px;
   height: auto;
-  transform:scale(1.1);
+  transform:scale(1.5);
  } 
-
+.magnification
+{ 
+  transform:scale(1.5);
+}
 
 
 
