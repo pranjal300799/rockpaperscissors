@@ -141,8 +141,7 @@ function updateScore(flag)
   }
   else
   {  finalResult();
-     playerBoard.textContent="-";
-     computerBoard.textContent="-";
+     resetScores(playerBoard,computerBoard);
   }
 }
 function finalResult()
@@ -172,6 +171,14 @@ function transform(string)
 function finishTransit(e)
 {
     e.target.classList.remove('magnification');
+}
+function resetScores(playerBoard,computerBoard)
+{
+    playerScore=0;
+     computerScore=0;
+     callCounter=0;
+     playerBoard.textContent="-";
+     computerBoard.textContent="-";
 }
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
