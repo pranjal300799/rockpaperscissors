@@ -110,7 +110,8 @@ function game(e)//plays a single round of game and returns the otput
      printCurrentRoundResult(currentRoundResult,callCounter);
 }
 function printCurrentRoundResult(e,callCounter)
-{   if(callCounter<=5)
+{   let flag=(playerScore===5)||(computerScore===5)
+    if(!flag)
     {
       let arena=document.querySelector(".arena");
       let para=document.createElement('p');
