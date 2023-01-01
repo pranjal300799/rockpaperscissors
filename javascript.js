@@ -122,27 +122,29 @@ function printCurrentRoundResult(e,callCounter)
     }
     else
     {
-        cleanArena();
+        cleanArena("first");
     }
 }
-function cleanArena()
+function cleanArena(string)
 {   let parent=document.querySelector(".arena")
     let arenaNodesList=document.querySelectorAll(".arena>p");
     arenaNodesList.forEach((e)=>{parent.removeChild(e)});
+    if(string==='first')
+    {
     updateScore("reset");
+    }
+    setTimeout(cleanArena,7000);
 }
 function updateScore(flag)
 {   let playerBoard=document.querySelector(".playersscore");
     let computerBoard=document.querySelector(".computerscore");
-  if(flag!=="reset")
-  { 
+   
     playerBoard.textContent=`${playerScore}`;
     computerBoard.textContent=`${computerScore}`;
-  }
-  else
-  {  finalResult();
-     resetScores(playerBoard,computerBoard);
-  }
+    if(flag==="reset")
+   {
+     finalResult();
+   }
 }
 function finalResult()
 {   let result;
@@ -162,6 +164,7 @@ function finalResult()
     }
     resultantString.textContent=result;
     arena.appendChild(resultantString);
+    setTimeout(resetScores,5000);
 }
 function transform(string)
 {
@@ -172,8 +175,9 @@ function finishTransit(e)
 {
     e.target.classList.remove('magnification');
 }
-function resetScores(playerBoard,computerBoard)
-{
+function resetScores()
+{   let playerBoard=document.querySelector(".playersscore");
+    let computerBoard=document.querySelector(".computerscore");
     playerScore=0;
      computerScore=0;
      callCounter=0;
@@ -185,9 +189,12 @@ movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// 
 
 let transitedNodesList=document.querySelectorAll(".computer>.moves img");//dec 29
 transitedNodesList.forEach(node=>node.addEventListener('transitionend',finishTransit)); //dec29
-
-
-
+function promptToRematch()
+{   let parent=document.querySelector(".arena");
+    let para=document.querySelector(".arena>p");
+    parent.removeChild(para);
+}
+promptToRematch();
 
 
 
