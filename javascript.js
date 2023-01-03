@@ -200,6 +200,7 @@ function promptToRematch()
 {   
     let parent=document.querySelector(".arena");
     let div=document.createElement('div');
+    div.classList.add('prompt');
     let para=document.createElement('p');
     let button=document.createElement('button');
     para.textContent="Play another game";
@@ -208,6 +209,7 @@ function promptToRematch()
     div.appendChild(button);
     parent.appendChild(div);
     button.addEventListener("click",()=>{location.reload()});
+
 
 }
 function removeListeners()
