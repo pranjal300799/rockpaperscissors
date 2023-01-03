@@ -133,7 +133,7 @@ function cleanArena(string)
     if(string==='first')
     {
     updateScore("reset");
-    setTimeout(cleanArena,7000);
+    setTimeout(()=>{cleanArena();promptToRematch();},7000);
     }
     
     
@@ -168,6 +168,7 @@ function finalResult()
     resultantString.textContent=result;
     arena.appendChild(resultantString);
     setTimeout(resetScores,5000);
+    
 }
 function transform(string)
 {
@@ -188,22 +189,26 @@ function resetScores()
      computerBoard.textContent="-";
 }
 function addTransition(){
-let movesList = document.querySelectorAll(".human>.moves>div");
+let movesList = document.querySelectorAll(".human>.moves>div>img");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
 
 let transitedNodesList=document.querySelectorAll(".computer>.moves img");//dec 29
 transitedNodesList.forEach(node=>node.addEventListener('transitionend',finishTransit)); //dec29
 }
-// function promptToRematch()
-// {   
-//     let answer=prompt("Do you want to play another round?");
+function promptToRematch()
+{   
+    let parent=document.querySelector(".arena");
+    let div=document.createElement('div');
+    let para=document.createElement('p');
+    let button=document.createElement('button');
+    para.textContent="Play another game";
+    button.textContent="Yes"
+    div.appendChild(para);
+    div.appendChild(button);
+    parent.appendChild(div);
+    button.addEventListener("click",()=>{location.reload()});
 
-// }
-// function removelListeners()
-// {
-//     let nodesList=document.querySelectorAll(".human>.moves>div");
-//     nodesList.forEach(node=>node.removeEventListener('click',game));
-// }
+}
 addTransition();
 
 
