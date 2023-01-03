@@ -133,7 +133,7 @@ function cleanArena(string)
     if(string==='first')
     {
     updateScore("reset");
-    setTimeout(()=>{cleanArena(); promptToRematch();},7000);
+    setTimeout(()=>{cleanArena(); promptToRematch();},2000);
     }
     
     
