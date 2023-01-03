@@ -187,11 +187,13 @@ function resetScores()
      playerBoard.textContent="-";
      computerBoard.textContent="-";
 }
+function addTransition(){
 let movesList = document.querySelectorAll(".human>.moves>div");
 movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// dec 27 added game as the callback function
 
 let transitedNodesList=document.querySelectorAll(".computer>.moves img");//dec 29
 transitedNodesList.forEach(node=>node.addEventListener('transitionend',finishTransit)); //dec29
+}
 // function promptToRematch()
 // {   
 //     let answer=prompt("Do you want to play another round?");
@@ -202,7 +204,7 @@ transitedNodesList.forEach(node=>node.addEventListener('transitionend',finishTra
 //     let nodesList=document.querySelectorAll(".human>.moves>div");
 //     nodesList.forEach(node=>node.removeEventListener('click',game));
 // }
-
+addTransition();
 
 
 
