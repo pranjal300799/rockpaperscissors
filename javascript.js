@@ -133,7 +133,7 @@ function cleanArena(string)
     if(string==='first')
     {
     updateScore("reset");
-    setTimeout(()=>{cleanArena();promptToRematch();},7000);
+    setTimeout(()=>{cleanArena(); promptToRematch();},7000);
     }
     
     
@@ -208,6 +208,11 @@ function promptToRematch()
     parent.appendChild(div);
     button.addEventListener("click",()=>{location.reload()});
 
+}
+function removelListeners()
+{
+    let nodesList=document.querySelectorAll(".human>.moves>div>img");
+    nodesList.forEach(node=>node.removeEventListener('click',game));
 }
 addTransition();
 
