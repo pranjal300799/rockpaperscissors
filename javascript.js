@@ -111,13 +111,14 @@ function game(e)//plays a single round of game and returns the otput
 }
 function printCurrentRoundResult(e,callCounter)
 {   let flag=(playerScore===5)||(computerScore===5)
-    if(!flag)
-    {
+    
       let arena=document.querySelector(".arena");
       let para=document.createElement('p');
       para.classList.add("currentresult");
       para.textContent=`Round ${callCounter},${e}`;
       arena.appendChild(para);
+    if(!flag)
+    { 
       updateScore();
     }
     else
@@ -132,8 +133,10 @@ function cleanArena(string)
     if(string==='first')
     {
     updateScore("reset");
-    }
     setTimeout(cleanArena,7000);
+    }
+    
+    
 }
 function updateScore(flag)
 {   let playerBoard=document.querySelector(".playersscore");
@@ -156,11 +159,11 @@ function finalResult()
     }
     else if(playerScore>=computerScore)
     {"You won,saviour of humans"
-      result="You won,saviour of humans";
+      result="You won";
     }
     else
     {
-       result="You lost to the evil computer";
+       result="You lost";
     }
     resultantString.textContent=result;
     arena.appendChild(resultantString);
@@ -189,12 +192,16 @@ movesList.forEach(move=>move.addEventListener('click',game,{capture:false}));// 
 
 let transitedNodesList=document.querySelectorAll(".computer>.moves img");//dec 29
 transitedNodesList.forEach(node=>node.addEventListener('transitionend',finishTransit)); //dec29
-function promptToRematch()
-{   let parent=document.querySelector(".arena");
-    let para=document.querySelector(".arena>p");
-    parent.removeChild(para);
-}
-promptToRematch();
+// function promptToRematch()
+// {   
+//     let answer=prompt("Do you want to play another round?");
+
+// }
+// function removelListeners()
+// {
+//     let nodesList=document.querySelectorAll(".human>.moves>div");
+//     nodesList.forEach(node=>node.removeEventListener('click',game));
+// }
 
 
 
