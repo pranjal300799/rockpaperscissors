@@ -41,7 +41,7 @@ body
 
 }                             /*order of these two relative to each other decides the prcecdence*/
 .arena
-{
+{ 
   display:flex;
   flex-direction:column;
   flex:1 1 auto;
@@ -136,7 +136,19 @@ h2
 { 
   transform:scale(1.5);
 }
+.prompt
+{
+  display:flex;
+  flex-direction:column;
+  background-color:purple;
+  font-size: medium;
+  align-items:center;
+  justify-content: space-around;
+  border-radius:20px;
+  padding:20px;
+  border: 2px solid white;
 
+}
 
 
 
