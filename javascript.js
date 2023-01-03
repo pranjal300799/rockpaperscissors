@@ -185,8 +185,7 @@ function resetScores()
     playerScore=0;
      computerScore=0;
      callCounter=0;
-     playerBoard.textContent="-";
-     computerBoard.textContent="-";
+     
 }
 function addTransition(){
 let movesList = document.querySelectorAll(".human>.moves>div>img");
@@ -209,7 +208,7 @@ function promptToRematch()
     button.addEventListener("click",()=>{location.reload()});
 
 }
-function removelListeners()
+function removeListeners()
 {
     let nodesList=document.querySelectorAll(".human>.moves>div>img");
     nodesList.forEach(node=>node.removeEventListener('click',game));
