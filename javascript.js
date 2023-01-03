@@ -167,7 +167,7 @@ function finalResult()
     }
     resultantString.textContent=result;
     arena.appendChild(resultantString);
-    setTimeout(resetScores,5000);
+    resetScores();
     
 }
 function transform(string)
@@ -183,8 +183,10 @@ function resetScores()
 {   let playerBoard=document.querySelector(".playersscore");
     let computerBoard=document.querySelector(".computerscore");
     playerScore=0;
-     computerScore=0;
-     callCounter=0;
+    computerScore=0;
+    callCounter=0;
+    removeListeners();
+
      
 }
 function addTransition(){
