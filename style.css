@@ -45,7 +45,7 @@ body
   display:flex;
   flex-direction:column;
   flex:1 1 auto;
-  min-width:600px;
+  min-width:50%;
   gap:20px; 
   background-image:linear-gradient(to bottom right,rgb(247, 0, 255),rgb(177, 81, 17)) ;
   border-radius:40px;
